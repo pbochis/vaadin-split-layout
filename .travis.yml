@@ -21,8 +21,4 @@ before_script:
 
 script:
   - ([ "$TRAVIS_EVENT_TYPE" = "pull_request" ] || gemini test test/visual)
-  - xvfb-run -s '-screen 0 1024x768x24' wct
-  - rm -rf bower_components
-  - mv bower_components-polymer2 bower_components
-  - cp wct.conf-2.0.js wct.conf.js
-  - xvfb-run -s '-screen 0 1024x768x24' wct
+  - xvfb-run -s '-screen 0 1024x768x24' polymer test
