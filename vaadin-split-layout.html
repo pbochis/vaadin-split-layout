@@ -230,7 +230,7 @@ element:
       }
     </style>
     <slot id="primary" name="primary"></slot>
-    <div id="splitter" on-track="_onHandleTrack" on-down="_preventDefault">
+    <div id="splitter" on-track="_onHandleTrack" on-down="_preventDefault" hidden="[[hideSplitter]]">
       <slot name="handle">
         <svg id="handle" width="40" height="40">
           <rect x="19" y="8" width="2" height="24"></rect>
@@ -256,6 +256,14 @@ element:
         vertical: {
           type: Boolean,
           reflectToAttribute: true,
+          value: false
+        },
+	      /**
+	       * Hide the splitter
+	       */
+        hideSplitter: {
+        	type: Boolean,
+          notify: true,
           value: false
         },
 
